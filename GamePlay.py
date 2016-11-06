@@ -8,12 +8,14 @@ rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
-#basic game cmd
+# basic game cmd
 get_status = '@status'
 get_list_cmd = '@cmd'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
-#end basic game cmd
+
+
+# end basic game cmd
 
 class GamePlay:
     def __init__(self):
@@ -28,7 +30,7 @@ class GamePlay:
             # handle get user info
             if get_status in user_msg_splited:
                 return 'get user status!'
-            #end handle get user info
+            # end handle get user info
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
@@ -61,7 +63,7 @@ class GamePlay:
 
     def create_user_data_file(self, userId, user_name):
         # How to storage User DB?
-        player_data = PlayerData(userId, user_name, 1, [], self.get_default_scene_data())
+        player_data = PlayerData(userId, user_name, 0, [], self.get_default_scene_data())
         player_json = jsonpickle.encode(player_data)
 
         file_name = userId + '.json'
@@ -90,7 +92,7 @@ class GamePlay:
         player_name = player_object.Name
         curr_sceneid = player_object.CurrentSceneId
         list_items = player_object.ListItem
-        list_player_scene = player_object.ListScene
+        list_scene = player_object.ListScene
 
         player_current_scene = player_object.ListScene[curr_sceneid]
         list_connection_scene = player_current_scene.ListConnection
@@ -106,7 +108,7 @@ class GamePlay:
                     player_json = jsonpickle.encode(player_object)
                     save_file.write(player_json)
                     save_file.close()
-                    return 'Next scene: ' + player_object.ListScene[curr_sceneid].SceneName + '\n' +\
+                    return 'Next scene: ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                            player_object.ListScene[curr_sceneid].Description
                 else:
                     return 'Have pussy italie, you need to find list item: ' + player_current_scene.ListRequireItems \
@@ -116,7 +118,7 @@ class GamePlay:
         # user wrong input
         return 'Hello ' + player_name + '. ' + \
                'You current here. The scene info below here\n' + \
-               'You\'re at ' + player_object.ListScene[curr_sceneid].SceneName + '\n' +\
+               'You\'re at ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                player_object.ListScene[curr_sceneid].Description
         # end user wrong input
         pass

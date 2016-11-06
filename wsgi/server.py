@@ -2,7 +2,7 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 
 from GamePlay import GamePlay
-from GameModels.PlayerData import PlayerData
+
 app = Flask(__name__)
 pyBot = GamePlay()
 
@@ -11,6 +11,7 @@ VERIFY_TOKEN = 'Danhth'
 
 bot = Bot(ACCESS_TOKEN)
 
+
 @app.route('/webhook', methods=['GET'])
 def handle_verification():
     if request.args.get("hub.verify_token") == VERIFY_TOKEN:
@@ -18,6 +19,7 @@ def handle_verification():
     else:
         return "Invalid verification token"
     return
+
 
 @app.route('/webhook', methods=['POST'])
 def handle_incoming_message():
