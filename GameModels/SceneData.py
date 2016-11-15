@@ -5,13 +5,14 @@
 # ListLinkedScene type LinkedScene[]ta
 # ListItemInScene: Item have in Scene []
 
+
 class SceneData:
 
     Id = -1
     SceneName = ''
     Description = ''
     ItemInScene = -1
-    ListRequireItems = []
+    ListRequireItems = []  # need type int
     ListConnection = []
 
     def __init__(self,
@@ -32,12 +33,20 @@ class SceneData:
         pass
 
     def check_listitem_require(self, listUserItem):
+        print('Start Track List Item')
+        print(self.Id)
+        print(self.ListRequireItems)
+        print('End Track List Item')
 
         if len(self.ListRequireItems) is 0:
             return True
 
+        if len(listUserItem) is 0:
+            return False
+
         for item in listUserItem:
-            if item in self.ListRequireItems is False:
+
+            if (item in self.ListRequireItems) is False:
                 return False
 
         return True

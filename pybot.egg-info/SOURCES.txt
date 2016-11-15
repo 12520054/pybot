@@ -1,7 +1,3 @@
 README
 setup.py
-YourAppName.egg-info/PKG-INFO
-YourAppName.egg-info/SOURCES.txt
-YourAppName.egg-info/dependency_links.txt
-YourAppName.egg-info/requires.txt
-YourAppName.egg-info/top_level.txt
+PyBot.egg-info/SOURCES.txt

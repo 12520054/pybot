@@ -1,5 +1,6 @@
 # Declare Scene connection
 
+
 class SceneConnectionData:
 
     SceneId = -1

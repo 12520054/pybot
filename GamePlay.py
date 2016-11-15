@@ -6,6 +6,7 @@ from GameModels.PlayerData import PlayerData
 
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
+collect_keywords_path = 'db/defaultscene/collect_keywords.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
 # basic game cmd
@@ -13,9 +14,8 @@ get_status = '@status'
 get_list_cmd = '@cmd'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
-
-
 # end basic game cmd
+
 
 class GamePlay:
     def __init__(self):
@@ -29,17 +29,17 @@ class GamePlay:
 
             # handle get user info
             if get_status in user_msg_splited:
-                return 'get user status!'
+                return 'get user status: bla bla bla....'
             # end handle get user info
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
-                return 'get list cmd in game'
+                return 'get list cmd in game: bla bla bla ....'
             # end handle return list cmd (how to play game)
 
             # handle how to play game
             if how_to_play_game in user_msg_splited:
-                return 'how to play this fcking game'
+                return 'how to play this game.. bla bla bla .....'
             # end handle how to play game
 
             return self.on_user_turn(userMsg.lower(), file_path)
@@ -84,6 +84,11 @@ class GamePlay:
 
     def on_user_turn(self, user_input, path):
 
+        collect_file = open(collect_keywords_path, 'r')
+        collect_json = collect_file.read()
+        collect_file.close()
+        list_collect_keywords = jsonpickle.decode(collect_json)
+
         player_file = open(path, 'r')
         player_json = player_file.read()
         player_file.close()
@@ -99,8 +104,19 @@ class GamePlay:
 
         # handle user scene
         for connection_scene in list_connection_scene:
+
+            print('Start Track connection Scene')
+            print(connection_scene.SceneId)
+            print(connection_scene.ListKeyWord)
+            print('End Track Cnnection scene')
+
             if user_input in connection_scene.ListKeyWord:
-                if player_current_scene.check_listitem_require(list_items) is True:
+                print('Start Track user_input')
+                print(user_input)
+                print('End Track user_input')
+                scene_data_connected = player_object.ListScene[connection_scene.SceneId]
+                if scene_data_connected.check_listitem_require(list_items) is True:
+
                     save_file = open(path, 'w')
                     player_object.CurrentSceneId = connection_scene.SceneId
                     curr_sceneid = player_object.CurrentSceneId
@@ -110,9 +126,13 @@ class GamePlay:
                     save_file.close()
                     return 'Next scene: ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                            player_object.ListScene[curr_sceneid].Description
+
                 else:
-                    return 'Have pussy italie, you need to find list item: ' + player_current_scene.ListRequireItems \
-                           + 'To go next scene!'
+                    req_items = ''
+                    for itemid in scene_data_connected.ListRequireItems:
+                        req_items += (str(itemid) + '\n')
+                    return 'You need to find list item: ' + req_items + '\nTo go next scene!'
+
         # end handle user scene
 
         # user wrong input

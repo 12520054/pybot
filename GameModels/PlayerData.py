@@ -8,6 +8,7 @@
 # ListItem: current inventory - ItemData[]
 # # # # # #
 
+
 class PlayerData:
 
     Id = -1
