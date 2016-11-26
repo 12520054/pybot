@@ -69,4 +69,4 @@ def log(message):  # simple wrapper for logging to stdout on heroku
     print(str(message))
 
 if __name__ == '__main__':
-    app.run(host='172.30.0.161', port=8080)
+    app.run(host='127.0.0.1', port=8080)
