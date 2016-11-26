@@ -35,9 +35,11 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wsgi/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="73" column="17" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="388">
+              <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -610,13 +612,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GameModels/SceneConnectionData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GamePlay.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -628,7 +623,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,11 +936,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="778" column="4" lean-forward="false" selection-start-line="778" selection-start-column="4" selection-end-line="778" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wsgi/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="73" column="17" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="388">
+          <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
