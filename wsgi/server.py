@@ -69,4 +69,6 @@ def log(message):  # simple wrapper for logging to stdout on heroku
     print(str(message))
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080)
+    _ip = os.environ['OPENSHIFT_PYTHON_IP']
+    _port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
+    app.run(host=_ip, port=_port)
