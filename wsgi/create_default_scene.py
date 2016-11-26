@@ -5,7 +5,7 @@ from GameModels.SceneConnectionData import SceneConnectionData
 from GameModels.SceneData import SceneData
 
 listDefaultScene = list()
-default_scene_data_path = 'wsgi/db/defaultscene/default_scene.json'
+default_scene_data_path = 'db/defaultscene/default_scene.json'
 
 listDefaultScene.append(
     SceneData(0, 'Scene 1', 'Description Scene 1', -1, [],

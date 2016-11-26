@@ -2,7 +2,7 @@ import jsonpickle
 
 from GameModels.ItemData import ItemData
 
-default_item_factory_path = 'wsgi/db/itemfactory/item_factory.json'
+default_item_factory_path = 'db/itemfactory/item_factory.json'
 
 listItemFactory = list()
 
