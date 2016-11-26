@@ -6,7 +6,6 @@ from GameModels.PlayerData import PlayerData
 
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
-collect_keywords_path = 'db/defaultscene/collect_keywords.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
 # basic game cmd
@@ -84,11 +83,6 @@ class GamePlay:
 
     def on_user_turn(self, user_input, path):
 
-        collect_file = open(collect_keywords_path, 'r')
-        collect_json = collect_file.read()
-        collect_file.close()
-        list_collect_keywords = jsonpickle.decode(collect_json)
-
         player_file = open(path, 'r')
         player_json = player_file.read()
         player_file.close()
@@ -104,26 +98,25 @@ class GamePlay:
 
         # handle user scene
         for connection_scene in list_connection_scene:
-
-            print('Start Track connection Scene')
-            print(connection_scene.SceneId)
-            print(connection_scene.ListKeyWord)
-            print('End Track Cnnection scene')
-
             if user_input in connection_scene.ListKeyWord:
-                print('Start Track user_input')
-                print(user_input)
-                print('End Track user_input')
+
                 scene_data_connected = player_object.ListScene[connection_scene.SceneId]
                 if scene_data_connected.check_listitem_require(list_items) is True:
 
                     save_file = open(path, 'w')
                     player_object.CurrentSceneId = connection_scene.SceneId
                     curr_sceneid = player_object.CurrentSceneId
+                    scene_item_id = scene_data_connected.ItemInScene
+
+                    if scene_item_id is not -1:
+                        player_object.ListItem.append(scene_item_id)
+                        scene_data_connected.ItemInScene = -1
+                        player_object.ListScene[connection_scene.SceneId] = scene_data_connected
 
                     player_json = jsonpickle.encode(player_object)
                     save_file.write(player_json)
                     save_file.close()
+
                     return 'Next scene: ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                            player_object.ListScene[curr_sceneid].Description
 
@@ -132,7 +125,6 @@ class GamePlay:
                     for itemid in scene_data_connected.ListRequireItems:
                         req_items += (str(itemid) + '\n')
                     return 'You need to find list item: ' + req_items + '\nTo go next scene!'
-
         # end handle user scene
 
         # user wrong input

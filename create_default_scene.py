@@ -13,12 +13,12 @@ listDefaultScene.append(
 )
 
 listDefaultScene.append(
-    SceneData(1, 'Scene 2', 'Description Scene 2', 1, [1],
+    SceneData(1, 'Scene 2', 'Description Scene 2', 1, [],
               [SceneConnectionData(2, ['key word 1', 'key word 2']), SceneConnectionData(3, ['key word 3', 'key word 4'])])
 )
 
 listDefaultScene.append(
-    SceneData(2, 'Scene 3', 'Description Scene 3', -1, [],
+    SceneData(2, 'Scene 3', 'Description Scene 3', -1, [1],
               [SceneConnectionData(3, ['key word 1', 'key word 2'])])
 )
 
