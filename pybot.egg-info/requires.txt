@@ -1,5 +1,4 @@
 Flask>=0.7.2
 MarkupSafe
 jsonpickle
-requests
-request
+requests>=2.11.0
