@@ -1,2 +1,2 @@
-APP_MODULE=wsgi/server
-APP_CONFIG=gunicorn.conf
+APP_FILE=wsgi/server
+APP_MODULE=server:app
