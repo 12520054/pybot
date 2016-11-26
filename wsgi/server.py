@@ -1,6 +1,5 @@
 from flask import Flask, request
 from pymessenger.bot import Bot
-
 from GamePlay import GamePlay
 
 app = Flask(__name__)
