@@ -18,7 +18,6 @@ def handle_verification():
         return request.args.get("hub.challenge")
     else:
         return "Invalid verification token"
-    return
 
 
 @app.route('/webhook', methods=['POST'])
