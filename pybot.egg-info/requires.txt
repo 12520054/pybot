@@ -1,4 +1,3 @@
-chatterbot
 Flask>=0.7.2
 MarkupSafe
 jsonpickle
