@@ -1,1 +1,2 @@
-
+https://github.com/gunthercox/jsondb/archive/0.1.3.tar.gz
+https://github.com/gunthercox/ChatterBot/archive/0.4.14.tar.gz

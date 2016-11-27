@@ -14,5 +14,7 @@ setup(name='PyBot',
                         'nltk<4.0.0',
                         'pymongo>=3.3.0,<4.0.0',
                         'python-twitter>=3.0',
-                        'textblob>=0.11.0,<0.12.0']
+                        'textblob>=0.11.0,<0.12.0'],
+      dependency_links=['https://github.com/gunthercox/jsondb/archive/0.1.3.tar.gz',
+                        'https://github.com/gunthercox/ChatterBot/archive/0.4.14.tar.gz']
       )
