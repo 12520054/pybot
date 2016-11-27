@@ -1,5 +1,10 @@
+chatterbot
 Flask>=0.7.2
 MarkupSafe
 jsonpickle
 requests>=2.11.0
-chatterbot
+jsondatabase>=0.1.1
+nltk<4.0.0
+pymongo>=3.3.0,<4.0.0
+python-twitter>=3.0
+textblob>=0.11.0,<0.12.0
