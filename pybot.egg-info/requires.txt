@@ -3,4 +3,4 @@ MarkupSafe
 jsonpickle
 requests>=2.11.0
 chatterbot>=0.4.13
-jsondatabase
+git+https://github.com/gunthercox/jsondb.git
