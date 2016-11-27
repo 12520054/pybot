@@ -12,8 +12,9 @@ item_data_path = 'db/itemfactory/item_factory.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
 # basic game cmd
-get_status = '@status'
 get_list_cmd = '@cmd'
+get_status = '@status'
+get_inventory = '@inventory'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
 
@@ -35,28 +36,63 @@ class GamePlay:
         pass
 
     def processUserMessage(self, userId, userMsg):
-
+        userMsg = userMsg.lower()
         file_path = rootPath + userId + '.json'
         if os.path.isfile(file_path):
             user_msg_splited = userMsg.split(' ')
 
             if reset_game in user_msg_splited:
                 os.remove(rootPath + userId + '.json')
-                return 'game data reset!\nUse \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
+                return 'Game data reset!\nUse \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
             # handle get user info
             if get_status in user_msg_splited:
-                return 'get user status: bla bla bla....'
+
+                player_file = open(file_path, 'r')
+                player_json = player_file.read()
+                player_file.close()
+                player_object = jsonpickle.decode(player_json)
+
+                player_name = player_object.Name
+                curr_sceneid = player_object.CurrentSceneId
+                player_current_scene = player_object.ListScene[curr_sceneid]
+
+                return 'Hi ' + player_name + \
+                       '. This is pyBot.\n' + \
+                       'You\'re at ' + player_current_scene.SceneName + '.\n' + \
+                       player_current_scene.Description
             # end handle get user info
+
+            if get_inventory in user_msg_splited:
+                player_file = open(file_path, 'r')
+                player_json = player_file.read()
+                player_file.close()
+                player_object = jsonpickle.decode(player_json)
+                list_user_items = player_object.ListItem
+
+                if len(list_user_items) is 0:
+                    return 'Empty Inventory'
+
+                lst_invent = ''
+
+                item_file = open(item_data_path, 'r')
+                item_json = item_file.read()
+                item_file.close()
+                list_item_object = jsonpickle.decode(item_json)
+
+                for itemid in list_user_items:
+                    lst_invent += (
+                        list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
+                return 'Inventory: ' + lst_invent
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
-                return 'get list cmd in game: bla bla bla ....'
+                return 'Get list cmd in game: bla bla bla ....'
             # end handle return list cmd (how to play game)
 
             # handle how to play game
             if how_to_play_game in user_msg_splited:
-                return 'how to play this game.. bla bla bla .....'
+                return 'How to play this game.. bla bla bla .....'
             # end handle how to play game
 
             return self.on_user_turn(userMsg.lower(), file_path)
@@ -89,7 +125,8 @@ class GamePlay:
         file = open(file_path, 'w')
         file.write(player_json)
         file.close()
-        return 'Success to creat new user:  ' + player_data.Name + '.\nUse command @status to view current your status in game.\n @cmd, @howto to learn how to play game :D'
+        return 'Welcome to pyBot ' + player_data.Name + '.\n' + \
+               'Use command @howto to learn play this game :D'
         pass
 
     def get_default_scene_data(self):
@@ -151,9 +188,7 @@ class GamePlay:
         # end handle user scene
 
         # user wrong input
-        return 'You current here. The scene info below.\n' + \
-               'You\'re at ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
-               player_object.ListScene[curr_sceneid].Description + '\n' + str(self.chatbot.get_response("Hello, how are you today?"))
+        return str(self.chatbot.get_response("Hello, how are you today?"))
 
         # end user wrong input
         pass
