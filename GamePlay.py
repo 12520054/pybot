@@ -3,6 +3,8 @@ import os
 import json
 import jsonpickle
 from GameModels.PlayerData import PlayerData
+from chatterbot import ChatBot
+
 
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
@@ -22,6 +24,14 @@ reset_game = '@hardreset'
 class GamePlay:
 
     def __init__(self):
+        self.chatbot = ChatBot(
+            'Ron Obvious',
+            trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+        )
+
+        # Train based on the english corpus
+        self.chatbot.train("chatterbot.corpus.english")
+
         pass
 
     def processUserMessage(self, userId, userMsg):
@@ -143,7 +153,7 @@ class GamePlay:
         # user wrong input
         return 'You current here. The scene info below.\n' + \
                'You\'re at ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
-               player_object.ListScene[curr_sceneid].Description
+               player_object.ListScene[curr_sceneid].Description + '\n' + str(self.chatbot.get_response("Hello, how are you today?"))
 
         # end user wrong input
         pass
