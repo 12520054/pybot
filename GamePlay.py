@@ -9,7 +9,7 @@ from pymongo import MongoClient
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
-db_name = 'db_name'
+db_name = 'db_text_game_adv'
 
 # basic game cmd
 get_status = '@status'
@@ -18,11 +18,13 @@ how_to_play_game = '@howto'
 reset_game = '@hardreset'
 # end basic game cmd
 
-db = MongoClient()['db_name']
-
 
 class GamePlay:
+
     def __init__(self):
+
+        game_db = MongoClient()[db_name]
+
         pass
 
     def processUserMessage(self, userId, userMsg):

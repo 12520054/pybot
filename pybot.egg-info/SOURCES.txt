@@ -1,3 +1,2 @@
-README
 setup.py
 PyBot.egg-info/SOURCES.txt

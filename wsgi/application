@@ -21,4 +21,3 @@ try:
 except IOError:
     pass
 
-from wsgi.server import app as application

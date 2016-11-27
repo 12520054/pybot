@@ -68,6 +68,9 @@ def send_message(recipient_id, message_text):
 def log(message):  # simple wrapper for logging to stdout on heroku
     print(str(message))
 
+exec(open("create_default_scene.py").read(), globals())
+exec(open("create_item_factory.py").read(), globals())
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 8080)
+    #app.run('0.0.0.0', 8080)
+    app.run()

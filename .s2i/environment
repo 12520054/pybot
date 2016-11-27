@@ -1,2 +1,2 @@
-APP_FILE=wsgi/server.py
+APP_FILE=server.py
 APP_MODULE=server:app
