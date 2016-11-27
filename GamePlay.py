@@ -28,6 +28,10 @@ class GamePlay:
         if os.path.isfile(file_path):
             user_msg_splited = userMsg.split(' ')
 
+            if reset_game in user_msg_splited:
+                os.remove(rootPath + userId + '.json')
+                return 'reset game'
+
             # handle get user info
             if get_status in user_msg_splited:
                 return 'get user status: bla bla bla....'
