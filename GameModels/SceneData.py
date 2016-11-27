@@ -44,9 +44,9 @@ class SceneData:
         if len(listUserItem) is 0:
             return False
 
-        for item in listUserItem:
+        for item in self.ListRequireItems:
 
-            if (item in self.ListRequireItems) is False:
+            if (item in listUserItem) is False:
                 return False
 
         return True

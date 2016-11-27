@@ -2,11 +2,12 @@
 import os
 import json
 import jsonpickle
-import pymongo
 from GameModels.PlayerData import PlayerData
+from chatterbot import ChatBot
 
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
+item_data_path = 'db/itemfactory/item_factory.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
 # basic game cmd
@@ -14,12 +15,19 @@ get_status = '@status'
 get_list_cmd = '@cmd'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
+
+
 # end basic game cmd
 
 
 class GamePlay:
+    chatbot = ChatBot(
+        'Fake Bot',
+        trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+    )
 
     def __init__(self):
+        self.chatbot.train("chatterbot.corpus.english")
         pass
 
     def processUserMessage(self, userId, userMsg):
@@ -30,7 +38,7 @@ class GamePlay:
 
             if reset_game in user_msg_splited:
                 os.remove(rootPath + userId + '.json')
-                return 'reset game'
+                return 'game data reset!\nUse \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
 
             # handle get user info
             if get_status in user_msg_splited:
@@ -128,15 +136,21 @@ class GamePlay:
 
                 else:
                     req_items = ''
+                    item_file = open(item_data_path, 'r')
+                    item_json = item_file.read()
+                    item_file.close()
+                    list_item_object = jsonpickle.decode(item_json)
                     for itemid in scene_data_connected.ListRequireItems:
-                        req_items += (str(itemid) + '\n')
-                    return 'You need to find list item: ' + req_items + '\nTo go next scene!'
+                        req_items += (
+                        list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
+                    return 'You need to find list item: ' + req_items + 'To go next scene!'
         # end handle user scene
 
         # user wrong input
-        return 'Hello ' + player_name + '. ' + \
-               'You current here. The scene info below here\n' + \
+        return str(self.chatbot.get_response(user_input)) + '\n' + \
+               'You current here. The scene info below.\n' + \
                'You\'re at ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                player_object.ListScene[curr_sceneid].Description
+
         # end user wrong input
         pass
