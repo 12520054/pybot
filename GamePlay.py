@@ -2,11 +2,14 @@
 import os
 import json
 import jsonpickle
+import pymongo
 from GameModels.PlayerData import PlayerData
+from pymongo import MongoClient
 
 rootPath = 'db/users/'
 default_scene_data_path = 'db/defaultscene/default_scene.json'
 alert_create_new_user = 'Undefined command! Use \'CREATE <Space> [Name]\' to create new player.\nHave a good time!'
+db_name = 'db_name'
 
 # basic game cmd
 get_status = '@status'
@@ -14,6 +17,8 @@ get_list_cmd = '@cmd'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
 # end basic game cmd
+
+db = MongoClient()['db_name']
 
 
 class GamePlay:
