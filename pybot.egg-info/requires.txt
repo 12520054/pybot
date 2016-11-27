@@ -2,5 +2,6 @@ Flask>=0.7.2
 MarkupSafe
 jsonpickle
 requests>=2.11.0
-chatterbot>=0.4.13
 jsondatabase
+jsondb
+chatterbot>=0.4.13

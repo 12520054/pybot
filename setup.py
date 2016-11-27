@@ -6,5 +6,5 @@ setup(name='PyBot',
       author='Danh Tran',
       author_email='12520054@gm.uit.edu.vn',
       url='https://www.python.org/community/sigs/current/distutils-sig',
-      install_requires=['Flask>=0.7.2', 'MarkupSafe', 'jsonpickle', 'requests>=2.11.0', 'chatterbot>=0.4.13', 'jsondatabase']
+      install_requires=['Flask>=0.7.2', 'MarkupSafe', 'jsonpickle', 'requests>=2.11.0', 'jsondatabase', 'jsondb', 'chatterbot>=0.4.13']
       )
