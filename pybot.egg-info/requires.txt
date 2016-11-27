@@ -3,4 +3,4 @@ MarkupSafe
 jsonpickle
 requests>=2.11.0
 chatterbot
-jsondb
+jsondb>=0.1.2
