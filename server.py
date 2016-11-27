@@ -5,6 +5,7 @@ import sys
 import json
 import requests
 
+from chatterbot import ChatBot
 
 app = Flask(__name__)
 pyBot = GamePlay()
