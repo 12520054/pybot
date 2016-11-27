@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="781895a0-79f5-457e-ae46-4569f1086b85" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wsgi/db/users/1483186265029090-1.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.s2i/environment" afterPath="$PROJECT_DIR$/.s2i/environment" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GamePlay.py" afterPath="$PROJECT_DIR$/GamePlay.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pybot.egg-info/SOURCES.txt" afterPath="$PROJECT_DIR$/pybot.egg-info/SOURCES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pybot.egg-info/requires.txt" afterPath="$PROJECT_DIR$/pybot.egg-info/requires.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wsgi/application" afterPath="$PROJECT_DIR$/wsgi/application" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/create_default_scene.py" afterPath="$PROJECT_DIR$/create_default_scene.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/create_item_factory.py" afterPath="$PROJECT_DIR$/create_item_factory.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/db/defaultscene/default_scene.json" afterPath="$PROJECT_DIR$/db/defaultscene/default_scene.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/db/itemfactory/item_factory.json" afterPath="$PROJECT_DIR$/db/itemfactory/item_factory.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/db/users/1483186265029090.json" afterPath="$PROJECT_DIR$/db/users/1483186265029090.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wsgi/server.py" afterPath="$PROJECT_DIR$/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <ignored path="pybot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +60,8 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -995,8 +981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
