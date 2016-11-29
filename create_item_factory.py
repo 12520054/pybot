@@ -6,12 +6,11 @@ default_item_factory_path = 'db/itemfactory/item_factory.json'
 
 listItemFactory = list()
 
-listItemFactory.append(ItemData(0, 'Item 1', 'Item 1 Description'))
-listItemFactory.append(ItemData(1, 'Item 2', 'Item 2 Description'))
-listItemFactory.append(ItemData(2, 'Item 3', 'Item 3 Description'))
-listItemFactory.append(ItemData(3, 'Item 4', 'Item 4 Description'))
-listItemFactory.append(ItemData(4, 'Item 5', 'Item 5 Description'))
-listItemFactory.append(ItemData(5, 'Item 6', 'Item 5 Description'))
+listItemFactory.append(ItemData(0, 'Metal Element', 'Metal Element Description'))
+listItemFactory.append(ItemData(1, 'Wood Element', 'Wood Element Description'))
+listItemFactory.append(ItemData(2, 'Earth Element', 'Earth Element Description'))
+listItemFactory.append(ItemData(3, 'Water Element', 'Water Element Description'))
+listItemFactory.append(ItemData(4, 'Fire Element', 'Fire Element Description'))
 
 list_item_json = jsonpickle.encode(listItemFactory)
 
