@@ -26,7 +26,7 @@ class GamePlay:
 
     def __init__(self):
         self.chatbot = ChatBot(
-            'Ron Obvious',
+            'Danh Tran',
             trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
         )
 
