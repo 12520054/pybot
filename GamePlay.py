@@ -58,7 +58,7 @@ class GamePlay:
                 player_current_scene = player_object.ListScene[curr_sceneid]
 
                 return 'Hi ' + player_name + \
-                       '. This is pyBot.' + \
+                       '. This is pyZork.' + \
                        '\n-------------------\n' + \
                        player_current_scene.SceneName + '.\n' + \
                        player_current_scene.Description
@@ -93,8 +93,10 @@ class GamePlay:
 
             # handle how to play game
             if how_to_play_game in user_msg_splited:
-                return 'Use words to win the game. whenever you want to reset the game, just type @hardreset then start pyZork again.\n'+\
-                       'Good luck!'
+                return 'Use words to win the game.\n' + \
+                       'Whenever you want to reset the game, just type @hardreset then start pyZork again.\n' +\
+                       'If you want to show your current status, just type @status.\n' +\
+                       'More command at: @cmd\n' + 'Good luck!'
             # end handle how to play game
 
             return self.on_user_turn(userMsg, file_path)
@@ -127,7 +129,7 @@ class GamePlay:
         file = open(file_path, 'w')
         file.write(player_json)
         file.close()
-        return 'Welcome to pyBot ' + player_data.Name + '.\n' + \
+        return 'Welcome to pyZork ' + player_data.Name + '.\n' + \
                'Use command @howto to learn play this game :D'
         pass
 
