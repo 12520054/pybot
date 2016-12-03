@@ -88,15 +88,16 @@ class GamePlay:
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
-                return 'Get list cmd in game: bla bla bla ....'
+                return 'List cmd in game: @status, @inventory, @howto, @hardreset  ....'
             # end handle return list cmd (how to play game)
 
             # handle how to play game
             if how_to_play_game in user_msg_splited:
-                return 'How to play this game.. bla bla bla .....'
+                return 'Use words to win the game. whenever you want to reset the game, just type @hardreset then start pyZork again.\n'+\
+                       'Good luck!'
             # end handle how to play game
 
-            return self.on_user_turn(userMsg.lower(), file_path)
+            return self.on_user_turn(userMsg, file_path)
         else:
             return self.create_user(userId, userMsg.split(' '))
         pass
@@ -189,7 +190,7 @@ class GamePlay:
         # end handle user scene
 
         # user wrong input
-        return str(self.chatbot.get_response("Hello, how are you today?"))
+        return str(self.chatbot.get_response(user_input))
 
         # end user wrong input
         pass
