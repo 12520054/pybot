@@ -58,8 +58,9 @@ class GamePlay:
                 player_current_scene = player_object.ListScene[curr_sceneid]
 
                 return 'Hi ' + player_name + \
-                       '. This is pyBot.\n' + \
-                       'You\'re at ' + player_current_scene.SceneName + '.\n' + \
+                       '. This is pyBot.' + \
+                       '\n-------------------\n' + \
+                       player_current_scene.SceneName + '.\n' + \
                        player_current_scene.Description
             # end handle get user info
 
@@ -82,8 +83,8 @@ class GamePlay:
 
                 for itemid in list_user_items:
                     lst_invent += (
-                        list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
-                return 'Inventory: ' + lst_invent
+                        '-> ' + list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
+                return 'Inventory Info\n-------------------\n ' + lst_invent
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
@@ -172,7 +173,7 @@ class GamePlay:
                     save_file.write(player_json)
                     save_file.close()
 
-                    return 'Next scene: ' + player_object.ListScene[curr_sceneid].SceneName + '\n' + \
+                    return player_object.ListScene[curr_sceneid].SceneName + '\n' + \
                            player_object.ListScene[curr_sceneid].Description
 
                 else:
