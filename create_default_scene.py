@@ -79,11 +79,13 @@ listDefaultScene.append(
         6,
         'Forest Path',
         'This is a path winding through a dimly lit forest.' + '\n' +
-        'One particularly large tree with some low branches stands at the edge of the path.',
+        'One particularly large tree with some low branches stands at the edge of the path.' +
+        '\nKeep go East you can see a River, something great waiting for you.',
         -1,
         [],
         [SceneConnectionData(7, ['climp', 'climp tree']),
-         SceneConnectionData(5, ['back', 'back to village'])]
+         SceneConnectionData(5, ['back', 'back to village']),
+         SceneConnectionData(9, ['go e', 'go east', 'east'])]
     )
 )
 
@@ -105,13 +107,63 @@ listDefaultScene.append(
 
 listDefaultScene.append(
     SceneData(
-        9,
+        8,
         'Taked the Wood Tresure element',
         'The Wood tresure elemnt is now in your inventory!' + '\n' +
         'You must to climb down then find 4 other to win the PyZork!',
         1,
         [],
         [SceneConnectionData(6, ['climb down'])]
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        9,
+        'River Flowing',
+        'There is a large river flowing in front of you. Something glisten insite the river with blue light. It is look like very valuable.',
+        -1,
+        [],
+        [SceneConnectionData(11, ['keep going', 'keep walking', 'walk through', 'cross river', 'cross the river']),
+         SceneConnectionData(10, ['take blue light', 'take tresure']),
+         SceneConnectionData(6, ['back'])]
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        10,
+        'Insite the River',
+        'WOW! The Tresure chose you. It is really WATER TRESURE of NATURE ELEMENTS. You got it.' +
+        '\nRemember, You have to find 5 Tresures of NATURE ELEMENTS, then bring it to Temple of Nature.',
+        3,
+        [],
+        [SceneConnectionData(9, ['back']),
+         SceneConnectionData(11, ['keep going', 'keep walking', 'cross the river', 'cross river'])]
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        11,
+        'Volcano',
+        'There is a Hurge Volcano here. It is look very dangerous. On top the Volcano have a Gem with red glisten, shining and very precious.',
+        -1,
+        [],
+        [SceneConnectionData(9, ['back', 'back to river']),
+         SceneConnectionData(12, [])]
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        12,
+        'Top of Volcano',
+        'Yeah, We all know it is dangerous but you did it completely! You got the Fire Tresure of NATURE ELEMENTS...' +
+        '\nTake a look, there no way to keep going. We need go back the village and find orther tresures.',
+        4,
+        [3],
+        [SceneConnectionData(5, ['back the village', 'back'])]
     )
 )
 

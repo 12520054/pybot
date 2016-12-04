@@ -188,7 +188,7 @@ class GamePlay:
                     for itemid in scene_data_connected.ListRequireItems:
                         req_items += (
                         list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
-                    return 'You need to find list item: ' + req_items + 'To go next scene!'
+                    return 'You need to find list item: ' + req_items + '\nTo go!'
         # end handle user scene
 
         # user wrong input
