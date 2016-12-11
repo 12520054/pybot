@@ -31,10 +31,8 @@ def handle_incoming_message():
             if x.get('message') and x['message'].get('text'):
                 message = x['message']['text']
                 recipient_id = x['sender']['id']
-
+                message.encode('ascii', 'ignore')
                 print('server received msg: ' + message)
-                unicodedata.normalize('NFKD', message).encode('ascii', 'ignore')
-
                 return_msg = pyBot.processUserMessage(recipient_id, message)
                 send_message(recipient_id, return_msg)
                 print('server return msg: ' + return_msg)
