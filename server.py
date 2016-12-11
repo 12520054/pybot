@@ -24,14 +24,13 @@ def handle_verification():
 @app.route('/webhook', methods=['POST'])
 def handle_incoming_message():
     data = request.json
-    print(data)
     for event in data['entry']:
         messaging = event['messaging']
         for x in messaging:
             if x.get('message') and x['message'].get('text'):
                 message = x['message']['text']
                 recipient_id = x['sender']['id']
-                message.encode('ascii', 'ignore')
+
                 print('server received msg: ' + message)
                 return_msg = pyBot.processUserMessage(recipient_id, message)
                 send_message(recipient_id, return_msg)

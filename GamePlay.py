@@ -192,7 +192,8 @@ class GamePlay:
         # end handle user scene
 
         # user wrong input
-        return str(self.chatbot.get_response(user_input))
+        return self.chatbot.get_response(user_input).text + \
+               '\nDo not forget use @status to check your current position in game!'
 
         # end user wrong input
         pass
