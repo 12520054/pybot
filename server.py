@@ -42,7 +42,7 @@ def handle_incoming_message():
 
 def send_message(recipient_id, message_text):
 
-    log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
+    #log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
     params = {
         "access_token": ACCESS_TOKEN
@@ -59,13 +59,13 @@ def send_message(recipient_id, message_text):
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
-    if r.status_code != 200:
-        log(r.status_code)
-        log(r.text)
+    #if r.status_code != 200:
+        #log(r.status_code)
+        #log(r.text)
 
 
-def log(message):  # simple wrapper for logging to stdout on heroku
-    print(str(message))
+#def log(message):  # simple wrapper for logging to stdout on heroku
+    #print(str(message))
 
 exec(open("create_default_scene.py").read(), globals())
 exec(open("create_item_factory.py").read(), globals())
