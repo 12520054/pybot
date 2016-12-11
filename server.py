@@ -31,10 +31,10 @@ def handle_incoming_message():
                 message = x['message']['text']
                 recipient_id = x['sender']['id']
 
-                print('server received msg: ' + message)
+                #print('server received msg: ' + message)
                 return_msg = pyBot.processUserMessage(recipient_id, message)
                 send_message(recipient_id, return_msg)
-                print('server return msg: ' + return_msg)
+                #print('server return msg: ' + return_msg)
             else:
                 pass
     return "ok", 200
