@@ -4,6 +4,7 @@ import os
 import sys
 import json
 import requests
+import unicodedata
 
 app = Flask(__name__)
 pyBot = GamePlay()
@@ -32,6 +33,7 @@ def handle_incoming_message():
                 recipient_id = x['sender']['id']
 
                 print('server received msg: ' + message)
+                unicodedata.normalize('NFKD', message).encode('ascii', 'ignore')
 
                 return_msg = pyBot.processUserMessage(recipient_id, message)
                 send_message(recipient_id, return_msg)
