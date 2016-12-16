@@ -61,7 +61,9 @@ class GamePlay:
                        '. This is pyZork.' + \
                        '\n-------------------\n' + \
                        player_current_scene.SceneName + '.\n' + \
-                       player_current_scene.Description
+                       player_current_scene.Description + \
+                       '\n-------------------\n' + \
+                       'If you forget how to play this game? Use command @howto to learn play this game :D'
             # end handle get user info
 
             if get_inventory in user_msg_splited:
