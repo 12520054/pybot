@@ -9,7 +9,7 @@ import unicodedata
 app = Flask(__name__)
 pyBot = GamePlay()
 
-ACCESS_TOKEN = 'EAAEgy21czGwBAGbcCOx2O2ZBn1WOMjdLi53FusjF2jILRhLNZBbW3vsaQXqa9Ne4tLqwtXg8A3kJorL9BKUU1STCC3rfZAmii5Wo9ZBsve2rryvH2gjTa5Tu0yeYcy6ODPE83GGZByMjGvYO3nkgypF9QZB5u0rmUWXHKQ54aYdgZDZD'
+ACCESS_TOKEN = 'EAAEgy21czGwBAJX2S8pSZAtc8PM0TElqZCtUX1Nhlo4EvdZAKsVQCgcC2mrqIPfwsHJ3Qw2Ws0ZBCij0G1URdh7e9JZCWvsvPdZBMpDxhXNXvxLMsKZBQ8CAPGbzhyNJwlTHRn65tDSZC6WHZA2SZCf7lSWMOVyZAZBCZCsO9U3J3qJukfwZDZD'
 VERIFY_TOKEN = 'Danhth'
 
 
@@ -30,20 +30,16 @@ def handle_incoming_message():
             if x.get('message') and x['message'].get('text'):
                 message = x['message']['text']
                 recipient_id = x['sender']['id']
-
-                #print('server received msg: ' + message)
+                print(message)
                 return_msg = pyBot.processUserMessage(recipient_id, message)
+                print(return_msg)
                 send_message(recipient_id, return_msg)
-                #print('server return msg: ' + return_msg)
             else:
                 pass
     return "ok", 200
 
 
 def send_message(recipient_id, message_text):
-
-    #log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
-
     params = {
         "access_token": ACCESS_TOKEN
     }
@@ -59,13 +55,7 @@ def send_message(recipient_id, message_text):
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
-    #if r.status_code != 200:
-        #log(r.status_code)
-        #log(r.text)
-
-
-#def log(message):  # simple wrapper for logging to stdout on heroku
-    #print(str(message))
+    pass
 
 exec(open("create_default_scene.py").read(), globals())
 exec(open("create_item_factory.py").read(), globals())
