@@ -4,6 +4,7 @@ import json
 import jsonpickle
 from GameModels.PlayerData import PlayerData
 from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
 
 
 rootPath = 'db/users/'
@@ -25,11 +26,11 @@ reset_game = '@hardreset'
 class GamePlay:
 
     def __init__(self):
-        self.chatbot = ChatBot(
-            'Danh Tran',
-            trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
-        )
 
+        self.chatbot = ChatBot(
+            'pyZork'
+        )
+        self.chatbot.set_trainer(ListTrainer)
         # Train based on the english corpus
         self.chatbot.train("chatterbot.corpus.english")
 
@@ -67,6 +68,7 @@ class GamePlay:
             # end handle get user info
 
             if get_inventory in user_msg_splited:
+
                 player_file = open(file_path, 'r')
                 player_json = player_file.read()
                 player_file.close()
@@ -121,7 +123,7 @@ class GamePlay:
         pass
 
     def create_user_data_file(self, userId, user_name):
-        # How to storage User DB?
+
         player_data = PlayerData(userId, user_name, 0, [], self.get_default_scene_data())
         player_json = jsonpickle.encode(player_data)
 

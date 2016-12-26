@@ -9,11 +9,11 @@ import unicodedata
 app = Flask(__name__)
 pyBot = GamePlay()
 
-ACCESS_TOKEN = 'EAAEgy21czGwBAJX2S8pSZAtc8PM0TElqZCtUX1Nhlo4EvdZAKsVQCgcC2mrqIPfwsHJ3Qw2Ws0ZBCij0G1URdh7e9JZCWvsvPdZBMpDxhXNXvxLMsKZBQ8CAPGbzhyNJwlTHRn65tDSZC6WHZA2SZCf7lSWMOVyZAZBCZCsO9U3J3qJukfwZDZD'
+ACCESS_TOKEN = 'EAAEgy21czGwBAFZCZArhZAR8BimmrCr3ZA9x42GG8M1s1ZAGopN3vgMtNE4pf1Be4sC4DKXLZCffKQ2GnqDYBtmV0CM5BNeZBwcbyvX7M0SftN7cHUDaGsmsBJBx20dfyZC4tpl5ZBzMDDFaVbKG6vFIMGwlEcSMIsC5TdT1lwBukRAZDZD'
 VERIFY_TOKEN = 'Danhth'
 
 
-@app.route('/webhook', methods=['GET'])
+@app.route('/', methods=['GET'])
 def handle_verification():
     if request.args.get("hub.verify_token") == VERIFY_TOKEN:
         return request.args.get("hub.challenge")
@@ -21,8 +21,9 @@ def handle_verification():
         return "Invalid verification token"
 
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/', methods=['POST'])
 def handle_incoming_message():
+    print(request)
     data = request.json
     for event in data['entry']:
         messaging = event['messaging']

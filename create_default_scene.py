@@ -1,7 +1,6 @@
 #this script to demo create default scene data (game map)
 import jsonpickle
 from GameModels.SceneConnectionData import SceneConnectionData
-
 from GameModels.SceneData import SceneData
 
 listDefaultScene = list()
@@ -10,7 +9,8 @@ default_scene_data_path = 'db/defaultscene/default_scene.json'
 listDefaultScene.append(
     SceneData(0,
               'Living room of House',
-              'You are standing in an living room of a white house. There is a small mailbox on the table here.',
+              'You are standing in an living room of a white house.' +
+              ' There is a small mailbox on the table here.',
               -1,
               [],
               [SceneConnectionData(1, ['take mailbox'])]
@@ -168,9 +168,7 @@ listDefaultScene.append(
 )
 
 list_scene_json = jsonpickle.encode(listDefaultScene)
-
 file = open(default_scene_data_path, 'w')
 file.write(list_scene_json)
 file.close()
-
 print('Saved Default!')
