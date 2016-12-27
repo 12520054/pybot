@@ -88,11 +88,15 @@ class GamePlay:
                 for itemid in list_user_items:
                     lst_invent += (
                         '-> ' + list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
-                return 'Inventory Info\n-------------------\n ' + lst_invent
+                return 'Inventory Info: \n-------------------\n ' + lst_invent
 
             # handle return list cmd (how to play game)
             if get_list_cmd in user_msg_splited:
-                return 'List cmd in game: @status, @inventory, @howto, @hardreset  ....'
+                return 'List cmd in game: @status, @inventory, @howto, @hardreset.\n' + \
+                       '@status: To display your current location status in pyZork.\n' + \
+                       '@inventory: To display all your items in your inventory.\n' + \
+                       '@howto: If you forget how to play pyZork. Just type @howto then enter.\n' + \
+                       '@hardreset: And one day, you want to play pyZork startover... Just @hardreset it.'
             # end handle return list cmd (how to play game)
 
             # handle how to play game
@@ -191,8 +195,8 @@ class GamePlay:
                     list_item_object = jsonpickle.decode(item_json)
                     for itemid in scene_data_connected.ListRequireItems:
                         req_items += (
-                        list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
-                    return 'You need to find list item: ' + req_items + '\nTo go!'
+                        '--> ' + list_item_object[itemid].Name + ': ' + list_item_object[itemid].Description + '\n')
+                    return 'You need to find item\n' + req_items + '\nTo go next scene!'
         # end handle user scene
 
         # user wrong input
