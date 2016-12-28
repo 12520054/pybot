@@ -241,10 +241,11 @@ listDefaultScene.append(
     SceneData(
         18,
         'You taked the Sword!',
-        'Now, you need to find the Dragon in the North to kill it, the get the Metal Element!',
+        'Now, you need to find the Dragon in the North to kill it, then get the Metal Element!',
         6,
         [],
-        [SceneConnectionData(7, ['back'])]
+        [SceneConnectionData(7, ['back']),
+         SceneConnectionData(19, ['go north', 'north'])]
     )
 )
 #end scene 5
@@ -253,12 +254,42 @@ listDefaultScene.append(
 listDefaultScene.append(
     SceneData(
         19,
-        'The Dragon House',
-        'The Dragon hehe',
+        'The Dragon Cave',
+        'A Dragon is sleeping. His breath is hot and feel death... The gem on his head is the Metal Element. The only way to get it is kill him. Now try it!',
         -1,
         [6],
         [
-            # scene connect to somewhere
+            SceneConnectionData(20, ['kill the dragon']),
+            SceneConnectionData(21, ['kill the dragon with sword'])
+        ]
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        20,
+        'You death!',
+        'Remember you can not kill the Dragon without your Sword! Type OK to revive at the last scene you see the Dragon.',
+        -1,
+        [6],
+        [
+            SceneConnectionData(18, ['ok'])
+        ]
+
+    )
+)
+
+listDefaultScene.append(
+    SceneData(
+        21,
+        'You killed the Dragon.',
+        'The Dragon was death. The Metal Element is now in your inventory.',
+        0,
+        [6],
+        [
+            # declare more level here. To get the fucking final game. hehe
+            # congra
+            #try to graduate. D!t me uit
         ]
     )
 )
