@@ -141,7 +141,9 @@ listDefaultScene.append(
         -1,
         [],
         [
-            SceneConnectionData(9, ['climb tree', 'climb the tree'])
+            SceneConnectionData(9, ['climb tree', 'climb the tree']),
+            SceneConnectionData(7, ['back']),
+            SceneConnectionData(11, ['go e', 'go east', 'east'])
         ]
     )
 )
@@ -167,13 +169,13 @@ listDefaultScene.append(
 listDefaultScene.append(
     SceneData(
         10,
-        'Taked the Wood Tresure.',
+        'Taked the Wood Treasure.',
         'The Wood Tresure is now in your inventory!' + '\n' +
         'You can climb down then find 4 other to win the PyZork!',
         1,
         [],
         [
-            SceneConnectionData(7, ['climb down'])
+            SceneConnectionData(8, ['climb down'])
         ]
     )
 )
@@ -206,7 +208,7 @@ listDefaultScene.append(
         [1],
         [
             SceneConnectionData(9, ['back']),
-            SceneConnectionData(13, ['keep going', 'keep walking', 'cross the river', 'cross river'])
+            SceneConnectionData(13, ['keep going', 'keep walking', 'cross the river', 'cross river', 'go northwest'])
         ]
     )
 )
@@ -311,7 +313,8 @@ listDefaultScene.append(
         [6],
         [
             SceneConnectionData(20, ['kill the dragon', 'kill', 'kill dragon']),
-            SceneConnectionData(21, ['kill the dragon with sword', 'kill dragon with sword'])
+            SceneConnectionData(21, ['kill the dragon with sword', 'kill dragon with sword']),
+            SceneConnectionData(18, ['back'])
         ]
     )
 )
