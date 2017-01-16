@@ -18,7 +18,7 @@ get_status = '@status'
 get_inventory = '@inventory'
 how_to_play_game = '@howto'
 reset_game = '@hardreset'
-
+hint_game = '@hint'
 
 # end basic game cmd
 
@@ -66,6 +66,19 @@ class GamePlay:
                        '\n-------------------\n' + \
                        'If you forget how to play this game? Use command @howto to learn play this game :D'
             # end handle get user info
+
+            if hint_game in user_msg_splited:
+
+                player_file = open(file_path, 'r')
+                player_json = player_file.read()
+                player_file.close()
+                player_object = jsonpickle.decode(player_json)
+
+                player_name = player_object.Name
+                curr_sceneid = player_object.CurrentSceneId
+                player_current_scene = player_object.ListScene[curr_sceneid]
+
+                return player_current_scene.Hint
 
             if get_inventory in user_msg_splited:
 

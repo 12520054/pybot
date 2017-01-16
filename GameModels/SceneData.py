@@ -14,6 +14,7 @@ class SceneData:
     ItemInScene = -1
     ListRequireItems = []  # need type int
     ListConnection = []
+    Hint = ''
 
     def __init__(self,
                  sceneId,
@@ -21,7 +22,8 @@ class SceneData:
                  sceneDescription,
                  itemInScene,
                  listRequireItems,
-                 listSceneConnection):
+                 listSceneConnection,
+                 hint):
 
         self.Id = sceneId
         self.SceneName = sceneName
@@ -29,6 +31,7 @@ class SceneData:
         self.ItemInScene = itemInScene
         self.ListRequireItems = listRequireItems
         self.ListConnection = listSceneConnection
+        self.Hint = hint
 
         pass
 

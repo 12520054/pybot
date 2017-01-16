@@ -18,7 +18,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(1, ['take mailbox']),
             SceneConnectionData(6, ['go out', 'go outside'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -33,7 +34,8 @@ listDefaultScene.append(
             SceneConnectionData(0, ['no', 'drop mailbox', 'throw mailbox', 'drop the mailbox', 'throw the mailbox']),
             SceneConnectionData(2, ['open', 'yes', 'open the mailbox', 'open mailbox']),
             SceneConnectionData(6, ['go out', 'go outside'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -48,7 +50,8 @@ listDefaultScene.append(
             SceneConnectionData(3, ['y', 'yes', 'read leaflet', 'read the leaflet', 'read']),
             SceneConnectionData(6, ['go out', 'go outside']),
             SceneConnectionData(5, ['take key','take the key'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -66,7 +69,8 @@ listDefaultScene.append(
             SceneConnectionData(4, ['drop leaflet', 'drop mailbox']),
             SceneConnectionData(6, ['go out', 'go outside']),
             SceneConnectionData(5, ['take key','take the key'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -81,7 +85,8 @@ listDefaultScene.append(
             SceneConnectionData(3, ['take the leaflet', 'read the leaflet', 'take leaflet', 'read leaflet', 'take mailbox', 'read mailbox']),
             SceneConnectionData(5, ['take key','take the key']),
             SceneConnectionData(6, ['go out', 'go outside'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -94,7 +99,8 @@ listDefaultScene.append(
         [],
         [
             SceneConnectionData(6, ['go out', 'go outside'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -110,7 +116,8 @@ listDefaultScene.append(
             SceneConnectionData(0, ['back', 'insite the house', 'back room']),
             SceneConnectionData(7, ['go east', 'east']),
             SceneConnectionData(16, ['find the alchemist', 'find alchemist'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 1
@@ -129,7 +136,8 @@ listDefaultScene.append(
             SceneConnectionData(8, ['find the tree', 'find large tree']),
             SceneConnectionData(6, ['back', 'back to village']),
             SceneConnectionData(11, ['go e', 'go east', 'east'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -144,7 +152,8 @@ listDefaultScene.append(
             SceneConnectionData(9, ['climb tree', 'climb the tree']),
             SceneConnectionData(7, ['back']),
             SceneConnectionData(11, ['go e', 'go east', 'east'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -162,7 +171,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(8, ['climb down']),
             SceneConnectionData(10, ['take', 'yes', 'take it'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -176,7 +186,8 @@ listDefaultScene.append(
         [],
         [
             SceneConnectionData(8, ['climb down'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 2
@@ -194,7 +205,8 @@ listDefaultScene.append(
             SceneConnectionData(13, ['keep going', 'keep walking', 'cross river', 'cross the river', 'go northwest']),
             SceneConnectionData(12, ['take blue light', 'take tresure', 'take gem']),
             SceneConnectionData(7, ['back'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -209,7 +221,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(9, ['back']),
             SceneConnectionData(13, ['keep going', 'keep walking', 'cross the river', 'cross river', 'go northwest'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 3
@@ -225,7 +238,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(11, ['back', 'back to river']),
             SceneConnectionData(14, ['climb', 'climb top', 'climb volcano'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -238,7 +252,8 @@ listDefaultScene.append(
         [3],
         [
             SceneConnectionData(15, ['take gem', 'take tresure'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -254,7 +269,8 @@ listDefaultScene.append(
         [3],
         [
             SceneConnectionData(6, ['back the village', 'back'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 4
@@ -270,7 +286,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['back']),
             SceneConnectionData(17, ['create sword', 'make sword', 'make legend sword'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -284,7 +301,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(18, ['take the sword', 'take sword']),
             SceneConnectionData(19, ['go south', 'south'])
-        ]
+        ],
+        'Hint'
     )
 )
 listDefaultScene.append(
@@ -297,7 +315,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['back']),
             SceneConnectionData(19, ['go south', 'south'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 5
@@ -315,7 +334,8 @@ listDefaultScene.append(
             SceneConnectionData(20, ['kill the dragon', 'kill', 'kill dragon']),
             SceneConnectionData(21, ['kill the dragon with sword', 'kill dragon with sword']),
             SceneConnectionData(18, ['back'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -328,7 +348,8 @@ listDefaultScene.append(
         [6],
         [
             SceneConnectionData(18, ['ok'])
-        ]
+        ],
+        'Hint'
     )
 )
 
@@ -343,7 +364,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['back', 'back to village']),
             SceneConnectionData(22, ['go southwest', 'southwest', 'sw'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 6
@@ -359,7 +381,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(23, ['go to the valley floor']),
             SceneConnectionData(6, ['back', 'back to village', 'back village'])
-        ]
+        ],
+        'Hint'
     )
 )
 listDefaultScene.append(
@@ -372,7 +395,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(24, ['digging', 'digging ground', 'digging the ground']),
             SceneConnectionData(6, ['back', 'back to village', 'back village'])
-        ]
+        ],
+        'Hint'
     )
 )
 listDefaultScene.append(
@@ -387,7 +411,8 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['back', 'back to village', 'back village']),
             SceneConnectionData(25, ['go to the temple', 'go to the south', 'go south', 'south'])
-        ]
+        ],
+        'Hint'
     )
 )
 #end scene 7
@@ -400,7 +425,8 @@ listDefaultScene.append(
         [],
         [
             SceneConnectionData(26, ['use 5 elements'])
-        ]
+        ],
+        'Hint'
     )
 )
 listDefaultScene.append(
@@ -411,7 +437,8 @@ listDefaultScene.append(
         'Use @hardreset to play pyZork again.',
         -1,
         [0, 1, 2, 3, 4],
-        []
+        [],
+        'Hint'
     )
 )
 
