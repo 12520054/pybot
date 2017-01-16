@@ -64,7 +64,7 @@ class GamePlay:
                        player_current_scene.SceneName + '.\n' + \
                        player_current_scene.Description + \
                        '\n-------------------\n' + \
-                       'If you forget how to play this game? Use command @howto to learn play this game :D'
+                       'If you forget how to play this game? Use command @howto to learn play this game or @hint to walk through.'
             # end handle get user info
 
             if hint_game in user_msg_splited:
@@ -109,7 +109,8 @@ class GamePlay:
                        '@status: To display your current location status in pyZork.\n' + \
                        '@inventory: To display all your items in your inventory.\n' + \
                        '@howto: If you forget how to play pyZork. Just type @howto then enter.\n' + \
-                       '@hardreset: And one day, you want to play pyZork startover... Just @hardreset it.'
+                       '@hardreset: And one day, you want to play pyZork startover... Just @hardreset it.\n' + \
+                       '@hint: To walk through'
             # end handle return list cmd (how to play game)
 
             # handle how to play game
@@ -214,7 +215,7 @@ class GamePlay:
 
         # user wrong input
         return self.chatbot.get_response(user_input).text + \
-               '\nDo not forget use @status to check your current position in game!'
+               '\nDo not forget use @status to check your current position in game and @hint to walk through!'
 
         # end user wrong input
         pass

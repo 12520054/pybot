@@ -19,7 +19,7 @@ listDefaultScene.append(
             SceneConnectionData(1, ['take mailbox']),
             SceneConnectionData(6, ['go out', 'go outside'])
         ],
-        'Hint'
+        'You can \'take mailbox\' to find a key.'
     )
 )
 
@@ -35,7 +35,7 @@ listDefaultScene.append(
             SceneConnectionData(2, ['open', 'yes', 'open the mailbox', 'open mailbox']),
             SceneConnectionData(6, ['go out', 'go outside'])
         ],
-        'Hint'
+        'Just \'open\' it!'
     )
 )
 
@@ -51,7 +51,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['go out', 'go outside']),
             SceneConnectionData(5, ['take key','take the key'])
         ],
-        'Hint'
+        'You can \'take key\' to go out or \'read leaflet\' to get infomation.'
     )
 )
 
@@ -70,7 +70,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['go out', 'go outside']),
             SceneConnectionData(5, ['take key','take the key'])
         ],
-        'Hint'
+        ';) \'take key\' to go out.'
     )
 )
 
@@ -86,7 +86,7 @@ listDefaultScene.append(
             SceneConnectionData(5, ['take key','take the key']),
             SceneConnectionData(6, ['go out', 'go outside'])
         ],
-        'Hint'
+        ';) \'take key\' to go out.'
     )
 )
 
@@ -100,7 +100,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['go out', 'go outside'])
         ],
-        'Hint'
+        '\'go out\' to collect 5 nature elements!'
     )
 )
 
@@ -117,7 +117,7 @@ listDefaultScene.append(
             SceneConnectionData(7, ['go east', 'east']),
             SceneConnectionData(16, ['find the alchemist', 'find alchemist'])
         ],
-        'Hint'
+        '\'go east\' to find the Wood Element. \'find alchemist\' if you have Fire Element.'
     )
 )
 #end scene 1
@@ -137,7 +137,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['back', 'back to village']),
             SceneConnectionData(11, ['go e', 'go east', 'east'])
         ],
-        'Hint'
+        '\'find large tree\' to see the Wood Element. \'go east\' to get the Water Element.'
     )
 )
 
@@ -153,7 +153,7 @@ listDefaultScene.append(
             SceneConnectionData(7, ['back']),
             SceneConnectionData(11, ['go e', 'go east', 'east'])
         ],
-        'Hint'
+        '\'climb tree\' to get the Wood. \'go east\' to the river.'
     )
 )
 
@@ -172,7 +172,7 @@ listDefaultScene.append(
             SceneConnectionData(8, ['climb down']),
             SceneConnectionData(10, ['take', 'yes', 'take it'])
         ],
-        'Hint'
+        '\'take it\' then \'climb down\''
     )
 )
 
@@ -187,7 +187,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(8, ['climb down'])
         ],
-        'Hint'
+        '\'climb down\' to find orther Elements.'
     )
 )
 #end scene 2
@@ -206,7 +206,7 @@ listDefaultScene.append(
             SceneConnectionData(12, ['take blue light', 'take tresure', 'take gem']),
             SceneConnectionData(7, ['back'])
         ],
-        'Hint'
+        '\'take gem\', it is the Water Element.'
     )
 )
 
@@ -222,7 +222,7 @@ listDefaultScene.append(
             SceneConnectionData(9, ['back']),
             SceneConnectionData(13, ['keep going', 'keep walking', 'cross the river', 'cross river', 'go northwest'])
         ],
-        'Hint'
+        '\'keep going\' to the northwest.'
     )
 )
 #end scene 3
@@ -239,7 +239,7 @@ listDefaultScene.append(
             SceneConnectionData(11, ['back', 'back to river']),
             SceneConnectionData(14, ['climb', 'climb top', 'climb volcano'])
         ],
-        'Hint'
+        '\'climb top\' of the volcano. Something hot on it.'
     )
 )
 
@@ -253,7 +253,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(15, ['take gem', 'take tresure'])
         ],
-        'Hint'
+        '\'take gem\', the Fire Element really here.'
     )
 )
 
@@ -270,7 +270,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(6, ['back the village', 'back'])
         ],
-        'Hint'
+        '\'back the village\' to find the Alchemist.'
     )
 )
 #end scene 4
@@ -287,7 +287,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['back']),
             SceneConnectionData(17, ['create sword', 'make sword', 'make legend sword'])
         ],
-        'Hint'
+        '\'create sword\', it can be a rare weapon to kill the Dragon King.'
     )
 )
 
@@ -302,7 +302,7 @@ listDefaultScene.append(
             SceneConnectionData(18, ['take the sword', 'take sword']),
             SceneConnectionData(19, ['go south', 'south'])
         ],
-        'Hint'
+        'The sword is created. Now you need to \'take the sword\'.'
     )
 )
 listDefaultScene.append(
@@ -316,7 +316,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['back']),
             SceneConnectionData(19, ['go south', 'south'])
         ],
-        'Hint'
+        '\'go south\' to the Dragon Cave.'
     )
 )
 #end scene 5
@@ -335,7 +335,7 @@ listDefaultScene.append(
             SceneConnectionData(21, ['kill the dragon with sword', 'kill dragon with sword']),
             SceneConnectionData(18, ['back'])
         ],
-        'Hint'
+        '\'kill the dragon with sword\' to take the Metal Element.'
     )
 )
 
@@ -349,7 +349,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(18, ['ok'])
         ],
-        'Hint'
+        '\'ok\''
     )
 )
 
@@ -365,7 +365,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['back', 'back to village']),
             SceneConnectionData(22, ['go southwest', 'southwest', 'sw'])
         ],
-        'Hint'
+        '\'go southwest\', you can see a Valley.'
     )
 )
 #end scene 6
@@ -382,7 +382,7 @@ listDefaultScene.append(
             SceneConnectionData(23, ['go to the valley floor']),
             SceneConnectionData(6, ['back', 'back to village', 'back village'])
         ],
-        'Hint'
+        'You can \'go to the valley floor\', something good here.'
     )
 )
 listDefaultScene.append(
@@ -396,7 +396,7 @@ listDefaultScene.append(
             SceneConnectionData(24, ['digging', 'digging ground', 'digging the ground']),
             SceneConnectionData(6, ['back', 'back to village', 'back village'])
         ],
-        'Hint'
+        'You need to \'digging the ground\', Earth Element is under the ground.'
     )
 )
 listDefaultScene.append(
@@ -412,7 +412,7 @@ listDefaultScene.append(
             SceneConnectionData(6, ['back', 'back to village', 'back village']),
             SceneConnectionData(25, ['go to the temple', 'go to the south', 'go south', 'south'])
         ],
-        'Hint'
+        '\'go to the south\' and see the temple. Then use all your 5 Elements'
     )
 )
 #end scene 7
@@ -426,7 +426,7 @@ listDefaultScene.append(
         [
             SceneConnectionData(26, ['use 5 elements'])
         ],
-        'Hint'
+        'If you collected all 5 Element, just \'use 5 elements\' to win this game.'
     )
 )
 listDefaultScene.append(
@@ -438,7 +438,7 @@ listDefaultScene.append(
         -1,
         [0, 1, 2, 3, 4],
         [],
-        'Hint'
+        'Congra! You win this game. Now @hardreset to play it again without hint.'
     )
 )
 
