@@ -28,9 +28,10 @@ class GamePlay:
     def __init__(self):
 
         self.chatbot = ChatBot(
-            'pyZork'
+            'pyZork',
+            trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
         )
-        self.chatbot.set_trainer(ListTrainer)
+        # self.chatbot.set_trainer(ListTrainer)
         # Train based on the english corpus
         self.chatbot.train("chatterbot.corpus.english")
 
